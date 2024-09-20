@@ -1,9 +1,7 @@
 import Image from 'next/image'
 import styles from './index.module.scss'
 
-type Props = {}
-
-export const Header = (props: Props) => {
+export const Header = () => {
 	return (
 		<header className={styles.container}>
 			<div className={styles.logo}>
