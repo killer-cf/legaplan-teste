@@ -23,7 +23,7 @@ export const TaskCard = async () => {
 					))}
 
 					{unfinishedTasks.length === 0 && (
-						<p className={styles.empty}>Nenhuma tarefa para cadastrada</p>
+						<p className={styles.empty}>Nenhuma tarefa, adicione uma nova</p>
 					)}
 				</div>
 

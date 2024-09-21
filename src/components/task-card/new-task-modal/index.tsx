@@ -40,7 +40,9 @@ export const NewTaskModal = () => {
 			name,
 		})
 
-		if (result) {
+		if (result?.error) {
+			console.log(result?.error)
+		} else {
 			setIsModalOpen(false)
 			router.refresh()
 		}
