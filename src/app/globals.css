@@ -1,7 +1,8 @@
 :root {
 	--background: #ffffff;
 
-	--light-blue: #e7eefb;
+	--light-blue: #a0dcf6;
+	--dark-blue: #0796d3;
 
 	--blue-gradient: linear-gradient(45deg, #0796d3, #53c0f0);
 	--red-gradient: linear-gradient(45deg, #d30707, #f05353);

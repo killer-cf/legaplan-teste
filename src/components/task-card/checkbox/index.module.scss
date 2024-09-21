@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  .checkbox {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #B0BBD1;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    transition: all 0.2s ease-in-out;
+
+    svg {
+      color: var(--dark-blue);
+    }
+  }
+
+  input:checked + .checkbox {
+    background-color: var(--light-blue);
+    border-color: var(--dark-blue);
+  }
+
+  input:checked ~ .label {
+    text-decoration: line-through;
+    color: #0000008A;
+  }
+
+  .label {
+    font-size: 16px;
+    font-weight: 400;
+    vertical-align: middle;
+  }
+}

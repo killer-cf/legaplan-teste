@@ -1,0 +1,24 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    width: 100%;
+    padding: 32px;
+    gap: 24px;
+    border: 1px solid #EAECF0;
+    border-radius: 16px;
+
+    h3 {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #0000008A;
+        text-align: center;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}

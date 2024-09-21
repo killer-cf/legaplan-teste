@@ -1,0 +1,20 @@
+.task {
+    display: flex;
+    justify-content: space-between;
+	padding: 16px;
+	border-radius: 8px;
+	border: 1px dotted #d7dde9;
+
+    &:hover {
+        background-color: #F7F9FD;
+        border-color: transparent;
+    }
+}
+
+.delete {
+    cursor: pointer;
+    color: #B0BBD1;
+    border: none;
+    background-color: transparent;
+    display: flex;
+}
