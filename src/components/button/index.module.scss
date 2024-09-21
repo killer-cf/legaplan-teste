@@ -16,6 +16,11 @@ $danger-gradient: linear-gradient(45deg, #d30707, #f05353);
   color: white;
 }
 
+.btn_secondary {
+  background: #E7EEFB;
+  color: black;
+}
+
 .btn_danger {
   background: $danger-gradient;
   color: white;

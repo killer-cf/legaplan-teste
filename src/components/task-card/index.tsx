@@ -1,6 +1,6 @@
 import { fetchTasks } from '@/actions/fetch-tasks'
-import { Button } from '../button'
 import styles from './index.module.scss'
+import { NewTaskModal } from './new-task-modal'
 import { Task } from './task'
 
 export const TaskCard = async () => {
@@ -38,7 +38,7 @@ export const TaskCard = async () => {
 					</>
 				)}
 			</div>
-			<Button size="full">Adicionar nova tarefa</Button>
+			<NewTaskModal />
 		</>
 	)
 }

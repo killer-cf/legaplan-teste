@@ -2,7 +2,7 @@ import styles from './index.module.scss'
 
 type ButtonProps = {
 	children: React.ReactNode
-	color?: 'primary' | 'danger'
+	color?: 'primary' | 'danger' | 'secondary'
 	size?: 'medium' | 'full'
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
