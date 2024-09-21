@@ -30,6 +30,13 @@
     color: #000000;
   }
 
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #0000008A;
+  }
+
   @media (max-width: 768px) {
     width: 100%;
     height: 100%;
@@ -37,35 +44,6 @@
     padding: 16px;
   }
 }
-
-.input {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    input {
-      border: 1px solid #D7DDE9;
-      border-radius: 8px;
-      padding: 16px;
-      font-size: 16px;
-      width: 100%;
-
-      &::placeholder {
-        color: #0000008F;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20px;
-      }
-    }
-
-    label {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 20px;
-      color: #000000;
-    }
-}
-
 
 .actions {
     display: flex;
@@ -79,4 +57,12 @@
     @media (max-width: 768px) {
         flex-direction: column-reverse;
     }
+}
+
+.delete {
+    cursor: pointer;
+    color: #B0BBD1;
+    border: none;
+    background-color: transparent;
+    display: flex;
 }
