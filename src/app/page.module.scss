@@ -170,4 +170,18 @@ a.secondary {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        text-align: center;
+        min-width: 450px;
+
+        @media (max-width: 600px) {
+            min-width: auto;
+            width: 100%;
+        }
+    }
 }

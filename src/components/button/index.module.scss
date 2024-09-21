@@ -1,0 +1,30 @@
+$gradient-primary: linear-gradient(45deg, #0796d3, #53c0f0);
+$danger-gradient: linear-gradient(45deg, #d30707, #f05353);
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  padding: 16px 24px;
+  font-size: 16px;
+}
+
+.btn_primary {
+  background: $gradient-primary;
+  color: white;
+}
+
+.btn_danger {
+  background: $danger-gradient;
+  color: white;
+}
+
+.btn_medium {
+  width: inherit;
+}
+
+.btn_full {
+  width: 100%;
+}
