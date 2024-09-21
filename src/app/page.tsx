@@ -1,20 +1,18 @@
-import { fetchTasks } from '@/actions/fetch-tasks'
-import { Header } from '@/components/header'
-import { TaskCard } from '@/components/task-card'
+import { Suspense } from 'react'
 import styles from './page.module.scss'
 
+import { Header } from '@/components/header'
+import { TaskCard } from '@/components/task-card'
+import { TaskCardSkeleton } from '@/components/task-card/skeleton'
+
 export default async function Home() {
-  const { tasks } = await fetchTasks()
-
-  if (!tasks) {
-    return <div>loading...</div>
-  }
-
 	return (
 		<main className={styles.main}>
 			<Header />
 			<div className={styles.content}>
-				<TaskCard tasks={tasks} />
+				<Suspense fallback={<TaskCardSkeleton />}>
+					<TaskCard />
+				</Suspense>
 			</div>
 		</main>
 	)

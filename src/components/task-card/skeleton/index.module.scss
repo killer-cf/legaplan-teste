@@ -1,0 +1,48 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    width: 100%;
+    padding: 32px;
+    gap: 24px;
+    border: 1px solid #EAECF0;
+    border-radius: 16px;
+    min-height: 500px;
+
+    @media (max-width: 600px) {
+        max-width: 100%;
+    }
+}
+
+.header, .task, .button {
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.header {
+  width: 50%;
+  height: 16px;
+  align-self: center;
+}
+
+.task {
+  height: 45px;
+  width: 100%;
+}
+
+.button {
+  height: 45px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}

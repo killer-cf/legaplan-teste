@@ -1,13 +1,15 @@
-import type { Task as TaskDTO } from '@prisma/client'
+import { fetchTasks } from '@/actions/fetch-tasks'
 import { Button } from '../button'
 import styles from './index.module.scss'
 import { Task } from './task'
 
-interface Props {
-	tasks: TaskDTO[]
-}
+export const TaskCard = async () => {
+	const { tasks } = await fetchTasks()
 
-export const TaskCard = ({ tasks }: Props) => {
+	if (!tasks) {
+		return null
+	}
+
 	const fineshedTasks = tasks.filter((task) => task.finished)
 	const unfinishedTasks = tasks.filter((task) => !task.finished)
 
