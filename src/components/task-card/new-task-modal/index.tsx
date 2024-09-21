@@ -27,7 +27,10 @@ export const NewTaskModal = () => {
 				<div className={styles.modal}>
 					<div className={styles.modalContent}>
 						<h2>Nova Tarefa</h2>
-						<input type="text" placeholder="Nome da tarefa" />
+						<div className={styles.input}>
+							<label htmlFor="taskName">Título</label>
+							<input id="taskName" type="text" placeholder="Digite" />
+						</div>
 						<div className={styles.actions}>
 							<Button color="secondary" onClick={handleClose}>
 								Cancelar
