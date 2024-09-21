@@ -19,7 +19,7 @@ export const TaskCard = async () => {
 				<h3>Suas tarefas de hoje</h3>
 				<div className={styles.list}>
 					{unfinishedTasks.map((task) => (
-						<Task key={task.id} finished={task.finished} name={task.name} />
+						<Task key={task.id} task={task} />
 					))}
 
 					{unfinishedTasks.length === 0 && (
@@ -32,7 +32,7 @@ export const TaskCard = async () => {
 						<h3>Tarefas finlizadas</h3>
 						<div className={styles.list}>
 							{fineshedTasks.map((task) => (
-								<Task key={task.id} finished={task.finished} name={task.name} />
+								<Task key={task.id} task={task} />
 							))}
 						</div>
 					</>

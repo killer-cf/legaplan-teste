@@ -4,9 +4,15 @@ import { Trash } from 'lucide-react'
 import { useState } from 'react'
 import styles from './index.module.scss'
 
+import { deleteTask } from '@/actions/delete-task'
 import { Button } from '@/components/button'
+import { useRouter } from 'next/navigation'
 
-export const DeleteTaskModal = () => {
+interface DeleteTaskModalProps {
+	id: number
+}
+
+export const DeleteTaskModal = ({ id }: DeleteTaskModalProps) => {
 	const [isModalOpen, setIsModalOpen] = useState(false)
 
 	const openModal = () => setIsModalOpen(true)
@@ -15,8 +21,17 @@ export const DeleteTaskModal = () => {
 		setIsModalOpen(false)
 	}
 
-	function handleAddTask() {
-		console.log('deletar tarefa')
+	const router = useRouter()
+
+	async function handleDeleteTask() {
+		const result = await deleteTask({ id })
+
+		if (result?.error) {
+			console.error(result.error)
+		} else {
+			setIsModalOpen(false)
+			router.refresh()
+		}
 	}
 
 	return (
@@ -33,7 +48,7 @@ export const DeleteTaskModal = () => {
 							<Button color="secondary" onClick={handleClose}>
 								Cancelar
 							</Button>
-							<Button color="danger" onClick={handleAddTask}>
+							<Button color="danger" onClick={handleDeleteTask}>
 								Deletar
 							</Button>
 						</div>

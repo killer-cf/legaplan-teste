@@ -1,17 +1,17 @@
+import type { Task as TaskDTO } from '@prisma/client'
 import { Checkbox } from '../checkbox'
 import { DeleteTaskModal } from '../delete-task-modal'
 import styles from './index.module.scss'
 
 type Props = {
-	name: string
-	finished: boolean
+	task: TaskDTO
 }
 
-export const Task = ({ name, finished }: Props) => {
+export const Task = ({ task }: Props) => {
 	return (
 		<div className={styles.task}>
-			<Checkbox checked={finished} label={name} />
-			<DeleteTaskModal />
+			<Checkbox checked={task.finished} label={task.name} />
+			<DeleteTaskModal id={task.id} />
 		</div>
 	)
 }
