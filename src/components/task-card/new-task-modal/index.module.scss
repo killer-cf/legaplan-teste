@@ -29,6 +29,13 @@
     font-weight: 500;
     color: #000000;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 16px;
+  }
 }
 
 .input {
@@ -67,5 +74,9 @@
 
     button {
         flex-grow: 1;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
     }
 }
