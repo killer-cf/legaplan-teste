@@ -6,7 +6,7 @@ interface CreateTaskInput {
 	name: string
 }
 
-export async function createTasks({ name }: CreateTaskInput) {
+export async function createTask({ name }: CreateTaskInput) {
 	try {
 		await prisma.task.create({
 			data: {
