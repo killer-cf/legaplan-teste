@@ -1,7 +1,16 @@
 version: '3.8'
 
 services:
-  postgresql_dev:
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    depends_on:
+      - postgresql
+
+  postgresql:
     image: postgres
     ports:
       - 5432:5432
@@ -10,12 +19,3 @@ services:
       - POSTGRES_PASSWORD=docker
       - POSTGRES_DB=legaplan
       - PGDATA=/data/postgres
-    volumes:
-      - ./data/pg:/data/postgres
-    networks:
-      - legaplan-network
-
-
-networks:
-  legaplan-network:
-    driver: bridge

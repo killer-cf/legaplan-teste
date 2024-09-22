@@ -5,7 +5,9 @@ import { Header } from '@/components/header'
 import { TaskCard } from '@/components/task-card'
 import { TaskCardSkeleton } from '@/components/task-card/skeleton'
 
-export default async function Home() {
+export const dynamic = 'force-dynamic'
+
+export default function Home() {
 	return (
 		<main className={styles.main}>
 			<Header />

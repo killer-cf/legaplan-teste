@@ -1,4 +1,4 @@
-FROM node:20-alpine AS base
+FROM node:22-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -30,7 +30,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN \
     if [ -f yarn.lock ]; then yarn add sharp && yarn run build; \
     elif [ -f package-lock.json ]; then npm install sharp && npx prisma generate && npm run build; \
-    elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm dlx prisma generate && pnpm run build; \
+    elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm dlx prisma generate && pnpm i sharp && pnpm run build; \
     else echo "Lockfile not found." && exit 1; \
     fi
 
