@@ -20,7 +20,7 @@ jobs:
           echo "sha=$SHA" >> $GITHUB_OUTPUT
 
       - name: Build docker image
-        run: docker build
+        run: docker build -t killercf/kilder-cf.next:${{ steps.generate_sha.outputs.sha }} .
 
       - name: Log into container register
         uses: docker/login-action@v3
