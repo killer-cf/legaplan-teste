@@ -20,7 +20,7 @@ jobs:
           echo "sha=$SHA" >> $GITHUB_OUTPUT
 
       - name: Build docker image
-        run: docker build -t killercf/kilder-cf.next:${{ steps.generate_sha.outputs.sha }} .
+        run: docker build -t killercf/legaplan.web:${{ steps.generate_sha.outputs.sha }} .
 
       - name: Log into container register
         uses: docker/login-action@v3
@@ -30,6 +30,6 @@ jobs:
 
       - name: Push image to container register
         run: |
-          docker push killercf/planner.web:${{ steps.generate_sha.outputs.sha }}
-          docker tag killercf/planner.web:${{ steps.generate_sha.outputs.sha }} killercf/planner.web:latest
-          docker push killercf/planner.web:latest
+          docker push killercf/legaplan.web:${{ steps.generate_sha.outputs.sha }}
+          docker tag killercf/legaplan.web:${{ steps.generate_sha.outputs.sha }} killercf/legaplan.web:latest
+          docker push killercf/legaplan.web:latest
