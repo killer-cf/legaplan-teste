@@ -29,8 +29,8 @@ ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN \
     if [ -f yarn.lock ]; then yarn add sharp && yarn run build; \
-    elif [ -f package-lock.json ]; then npm install sharp && npm run build; \
-    elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm run build; \
+    elif [ -f package-lock.json ]; then npm install sharp && npx prisma generate && npm run build; \
+    elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm dlx prisma generate && pnpm run build; \
     else echo "Lockfile not found." && exit 1; \
     fi
 
